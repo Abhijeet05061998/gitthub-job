@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #f5f8fa;
+}
+
+.header__page {
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    color: rgba(198, 193, 193, 0.74);
+    background: #24292e;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.header__logo {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo a:link,
+.header__logo a:visited {
+    text-decoration: none;
+    color: #fff;
+    transition: all .3s;
+}
+
+.header__logo a:hover { color: #474848; }
+
+.searchBox {
+    background: #474848;
+    padding: .5rem 2rem .5rem 1rem;
+    margin-left: 2rem;
+    border: none;
+    border-radius: 4px;
+    align-self: center;
+    color: #e5e5e5;
+    transition: all .5s ease;
+}
+
+.searchBox:hover,
+.searchBox:focus {
+    background: #fff;
+    color: #474848;
+    padding: .5rem 6rem .5rem 1rem;
+}
+
+.hero-section {
+    padding: 7rem 5rem;
+    height: 90vh;
+    background: #2f363d;
+    background-image: url('https://github.githubassets.com/images/modules/marketplace/bg-hero.svg');
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 5rem;
+}
+.title {
+    grid-column: 2/3;
+    text-align: center;
+    color: rgba(198, 193, 193, 0.74);
+    font-size: 1.3rem;
+}
+
+.title p {
+    display: block;
+    position: relative;
+    transition: all .3s;
+}
+
+.title__github-link:link,
+.title__github-link:visited {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+    color: #fafafa;
+    position: relative;
+    transition: all .5s ease;
+}
+
+.title__github-link::after {
+    content: '';
+    height: 1px;
+    width: 0%;
+    display: block;
+    background: #e5e5e5;
+    margin: .5rem 0;
+    transition: width .5s ease-out;
+    backface-visibility: hidden;
+}
+
+.title__github-link:hover::after,
+.title__github-link:active::after { width: 100%; }
+
+.title__github-link:hover,
+.title__github-link:active { 
+    transform: translateX(15px); 
+}
+
+.hero-section-image-container {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.hero-image { 
+    height: 15rem; 
+    transition: filter .3s;
+}
+
+.hero-image:hover {
+    filter: drop-shadow(0 -.5mm 0mm rgb(167, 14, 214));
+}
+
+.header__page-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__page-right i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.header__page-right i:hover { color: #fff; }
+
+.ring {
+    transform-origin: 50% 4px;
+    animation: ringing-bell 4s ease-in-out;
+}
+
+@keyframes ringing-bell {
+      0% { 
+          transform: rotate(0); 
+          color: #fff;
+        }
+      1% { transform: rotate(30deg); }
+      3% { transform: rotate(-28deg); }
+      5% { transform: rotate(34deg); }
+      7% { transform: rotate(-32deg); }
+      9% { transform: rotate(30deg); }
+      11% { transform: rotate(-28deg); }
+      13% { transform: rotate(26deg); }
+      15% { transform: rotate(-24deg); }
+      17% { transform: rotate(22deg); }
+      19% { 
+          transform: rotate(-20deg); 
+          color: rgba(198, 193, 193, 0.74);
+        }
+      21% { transform: rotate(18deg); }
+      23% { transform: rotate(-16deg); }
+      25% { 
+          transform: rotate(14deg); 
+          color: #fff;
+        }
+      27% { transform: rotate(-12deg); }
+      29% { transform: rotate(10deg); }
+      31% { transform: rotate(-8deg); }
+      33% { transform: rotate(6deg); 
+            color: rgba(198, 193, 193, 0.74);
+        }
+      35% { transform: rotate(-4deg); }
+      37% { transform: rotate(2deg); }
+      39% { transform: rotate(-1deg); }
+      41% { transform: rotate(1deg); }
+
+      43% { transform: rotate(0); }
+      100% { transform: rotate(0); }
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2.5rem;
+    margin: 10rem 5rem 5rem;
+}
+
+.card {
+    background: #fff;
+    font-family: Roboto;
+    color: #666;
+    border-radius: 4px;
+    line-height: 1.5;
+    margin: 1rem;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.card__header {
+    padding: 2rem 2rem 4rem;
+    position: relative;
+}
+
+.card__city img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card__user {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.card__user img {
+    border-radius: 50%;
+    filter: sepia(1);
+    border: 2px solid #fff;
+}
+
+.card__body {
+    padding: 4rem 2rem 2rem;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.card__body h1 { font-size: 1.1rem; }
+
+.card__body h1::after {
+    content: '';
+    height: 1px;
+    width: 100%;
+    display: block;
+    background: #f7f7f7;
+    margin: 1rem auto;
+}
+
+.card__body span { font-weight: 500; }
+
+.card__icons {
+    margin: 2rem 0;
+    color: #7f7f80;
+}
+
+.github-icon:hover { color: #0366d6; }
+
+.card__icons span { color: #474848;}
+
+.eye__icon { margin-right: .5rem; }
+
+.branch__icon, .star__icon { margin: .5rem .5rem .5rem 1.5rem; }
+
+.card__button:link,
+.card__button:visited {
+    text-decoration: none;
+    background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+.card__button:hover,
+.card__button:active {
+    background-image: linear-gradient(-180deg,#269f42,#34d058 90%)
+}
+
+.book__icon { font-size: 1.2rem; }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 7rem;
+    padding: 3rem 0;
+    font-size: 12px;
+    border-top: 1px solid #e1e4e8;
+}
+footer p {
+    display: inline;
+    color: #586069;
+}
+footer a:link,
+footer a:visited {
+    text-decoration: none;
+    margin-left: 7px;
+    color: #0366d6;
+}
+
+footer a:hover,
+footer a:active { text-decoration: underline; }
+
+.footer__icon {
+    font-size: 2rem;
+    color: #c6cfd8;
+}
+.footer__icon:hover { color: #959da5; }
+::selection {
+    background: #474848;
+    color: #fafafa;
+}
+
+@media only screen and (max-width: 1050px) {
+    .cards-container {
+        grid-gap: 1rem;
+        margin: 4rem 2rem;
+    }
+    footer { margin: 2rem; }
+}
+
+@media only screen and (max-width: 960px) {
+    .searchBox {
+        padding: .5rem;
+        margin-left: .5rem;
+    }
+    
+    .header__page {
+        padding: 0 .5rem;
+        letter-spacing: 0px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+}
+@media only screen and (max-width: 850px) {
+    footer { margin: 2rem 5rem; }
+    .footer__left, .footer__right {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.8;
+    }
+    footer i { margin: auto; }
+    .footer__right { text-align: right }
+}
+
+@media only screen and (max-width: 750px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        margin: 2rem 25vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-section {
+        padding: 7rem 2rem 0;
+    }
+    .hero-image {
+        height: 10rem;
+    }
+    .cards-container { margin: 2rem 15vw; }
+    footer { margin: 2rem; }
+}
+
+@media only screen and (max-width: 470px) {
+    .hero-section {
+        padding: 7rem 1rem 0;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .title__github-link:link,
+    .title__github-link:visited {
+        font-size: 1.8rem;
+    }
+    .hero-image {
+        height: 8rem;
+    }
+    .cards-container { margin: 5rem .5rem; }
+}
